@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>E-Commerce Store</h1>
+  <p>Explore Products by Category</p>
+<nav>
+    <a href="login.html" id="login-link">Login</a>
+   <a href="profile.html" id="profile-link" style="display:none;">Profile</a>
+    <a href="#" id="logout-link" style="display:none;" onclick="logout()">Logout</a>
+</nav>
+</header>
+
+<div class="container">
+  <select id="category" onchange="loadProducts(this.value)">
+    <option value="">All Categories</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Fashion">Fashion</option>
+  </select>
+
+  <h2 class="product-category">Products</h2>
+  <div id="products-container" class="container"></div>
+
+  <h2 class="product-category">Cart</h2>
+  <div id="cart-container" class="container"></div>
+  <p id="cart-total"><strong>Total: $0</strong></p>
+</div>
+
+<script src="script.js"></script>
+<script>
+  loadProducts();
+  loadCart();
+</script>
+</body>
+</html>
